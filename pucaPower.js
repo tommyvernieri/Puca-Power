@@ -607,7 +607,7 @@ var pucaPower = {
         var curAlert = {}; // { msg, style, value, memberID }
         var newAlertQty = 0;
 
-        var memberID, memberName, memberPts;
+        var memberID, memberName, memberPts, memberCountry;
         var tradeIDs, firstTradeID, cardQty, totalCardPts, tradeValue;
 
         var rowColor;
@@ -620,6 +620,7 @@ var pucaPower = {
             memberID     = i;
             memberName   = this.memberData[i].memberName;
             memberPts    = this.memberData[i].memberPts;
+            memberCountry = this.memberData[i].country;
             tradeIDs     = this.memberData[i].tradeIDs;
             firstTradeID = Object.keys(tradeIDs).shift();
             cardQty      = this.memberData[i].cardQty;
@@ -688,6 +689,7 @@ var pucaPower = {
                   + 'wants ' + cardQty + ' cards for '
                   + '<strong class="' + curAlert.style + '">' + totalCardPts + ' points</strong> '
                   + alertStar
+                  + '(' + memberCountry + ')'
                   + '</span>'
                 ;
             }
